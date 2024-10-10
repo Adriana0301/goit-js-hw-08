@@ -70,10 +70,10 @@ list.addEventListener("click", onImageClick);
 function onImageClick(event) {
   event.preventDefault();
 
-  const isImage = event.target.classList.contains('gallery-image');
-  if (!isImage) {
+  if (event.target.nodeName !== 'IMG') {
     return;
-  };
+  }
+  
   const largeImageUrl = event.target.dataset.source;
   const imageDescription = event.target.alt;
 
